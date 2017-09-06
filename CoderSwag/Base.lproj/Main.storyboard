@@ -29,22 +29,22 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="135" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="twt-Nk-Fhc">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="135" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="twt-Nk-Fhc">
                                 <rect key="frame" x="0.0" y="53.5" width="375" height="549.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="135" id="HIg-9w-fqH" customClass="CategoryCell" customModule="CoderSwag" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CategoryCell" rowHeight="135" id="HIg-9w-fqH" customClass="CategoryCell" customModule="CoderSwag" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="135"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HIg-9w-fqH" id="8Pj-XB-kbg">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="134.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="135"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="digital" translatesAutoresizingMaskIntoConstraints="NO" id="fgV-Aw-F8w">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="134.5"/>
+                                                    <rect key="frame" x="0.0" y="3" width="375" height="128.5"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HOODIES" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3l3-Qn-4a4">
-                                                    <rect key="frame" x="125.5" y="46.5" width="124" height="40"/>
+                                                    <rect key="frame" x="125.5" y="47.5" width="124" height="40"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="9A8-R2-qpy"/>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="124" id="Hel-gW-RUa"/>
@@ -57,10 +57,10 @@
                                             <constraints>
                                                 <constraint firstItem="3l3-Qn-4a4" firstAttribute="centerX" secondItem="8Pj-XB-kbg" secondAttribute="centerX" id="8No-cw-rz2"/>
                                                 <constraint firstAttribute="trailing" secondItem="fgV-Aw-F8w" secondAttribute="trailing" id="9nJ-dH-4bi"/>
-                                                <constraint firstAttribute="bottom" secondItem="fgV-Aw-F8w" secondAttribute="bottom" id="Ktk-gT-ty2"/>
-                                                <constraint firstItem="fgV-Aw-F8w" firstAttribute="top" secondItem="8Pj-XB-kbg" secondAttribute="top" id="SLR-dP-qcg"/>
+                                                <constraint firstAttribute="bottom" secondItem="fgV-Aw-F8w" secondAttribute="bottom" constant="3" id="Wa3-Zi-1Y7"/>
                                                 <constraint firstItem="fgV-Aw-F8w" firstAttribute="leading" secondItem="8Pj-XB-kbg" secondAttribute="leading" id="aOv-uX-7bB"/>
                                                 <constraint firstItem="3l3-Qn-4a4" firstAttribute="centerY" secondItem="8Pj-XB-kbg" secondAttribute="centerY" id="k9u-kC-aZc"/>
+                                                <constraint firstItem="fgV-Aw-F8w" firstAttribute="top" secondItem="8Pj-XB-kbg" secondAttribute="top" constant="3" id="kPw-Cm-gMU"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
