@@ -8,6 +8,9 @@
 
 import UIKit
 
+public let productsVCSegueIdentifier = "ProductsVC"
+public let categoryCellIdentifier = "CategoryCell"
+
 class CategoriesVC: UIViewController {
     
     @IBOutlet weak var categoryTable: UITableView!
@@ -23,15 +26,29 @@ class CategoriesVC: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let productsVC = segue.destination as? ProductsVC {
+            let barBtn = UIBarButtonItem()
+            barBtn.title = ""
+            navigationItem.backBarButtonItem = barBtn
+            
+            assert(sender as? Category != nil)
+            productsVC.initProducts(category: sender as! Category)
+        }
+    }
 }
 
 extension CategoriesVC: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let category = DataService.instance.getCategories()[indexPath.row]
+        performSegue(withIdentifier: productsVCSegueIdentifier, sender: category)
+    }
 }
 
 extension CategoriesVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell") as? CategoryCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: categoryCellIdentifier) as? CategoryCell {
             let category = DataService.instance.getCategories()[indexPath.row]
             cell.updateViews(category: category)
             return cell
